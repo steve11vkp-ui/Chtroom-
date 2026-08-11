@@ -1,1 +1,82 @@
-index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatroom</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#111827;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+.box{
+  width:90%;
+  max-width:400px;
+  background:#1f2937;
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+  box-sizing:border-box;
+}
+h1{margin-top:0;}
+input{
+  width:100%;
+  padding:14px;
+  box-sizing:border-box;
+  border:0;
+  border-radius:10px;
+  margin:15px 0;
+  font-size:16px;
+}
+button{
+  width:100%;
+  padding:14px;
+  border:0;
+  border-radius:10px;
+  background:#2563eb;
+  color:white;
+  font-size:17px;
+}
+#result{
+  margin-top:20px;
+  color:#9ca3af;
+}
+</style>
+</head>
+
+<body>
+<div class="box">
+  <h1>💬 Chatroom</h1>
+  <p>Enter your Chatroom ID</p>
+
+  <input id="userId" type="text" placeholder="Enter ID">
+
+  <button onclick="joinRoom()">Join Chatroom</button>
+
+  <div id="result"></div>
+</div>
+
+<script>
+function joinRoom(){
+  const id = document.getElementById("userId").value.trim();
+
+  if(!id){
+    document.getElementById("result").innerText =
+      "Please enter an ID.";
+    return;
+  }
+
+  document.getElementById("result").innerText =
+    "Chatroom ID: " + id;
+}
+</script>
+
+</body>
+</html>
